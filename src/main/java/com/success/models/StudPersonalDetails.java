@@ -6,8 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+@Component
 @Entity
 @Table(name="StudentPersonalDetails")
 public class StudPersonalDetails {
@@ -18,7 +21,7 @@ public class StudPersonalDetails {
 	private String lastName;
 	private String motherName;
 	private String gender;
-	private String dateOfBirth;
+	private Date dateOfBirth;
 	private String aadharNumber;
 	private String govtIdType;
 	private String govtId;
@@ -83,11 +86,11 @@ public class StudPersonalDetails {
 		this.gender = gender;
 	}
 
-	public String getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 

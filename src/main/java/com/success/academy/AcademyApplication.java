@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EntityScan( basePackages = {"com.success.models"} )
 @SpringBootApplication
 public class AcademyApplication {
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(AcademyApplication.class, args);
 	}

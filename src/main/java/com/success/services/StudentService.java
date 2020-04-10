@@ -1,5 +1,7 @@
 package com.success.services;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -46,18 +48,12 @@ public class StudentService {
     
     public StudPersonalDetails checkStudPresence(StudPersonalDetails studDetails) {
     	
-    	String courseToJoin =studDetails.getFirstCourse();
 		String studName=studDetails.getFirstName();
-		String studIdGenerated="";
-		if (courseToJoin.length() > 6)
-		{
-			studIdGenerated = courseToJoin.substring(0, 6);
-		}
-		else
-		{
-			studIdGenerated = courseToJoin;
-		}
-		if (studName.length() > 2)
+		Format formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String formattedDate = formatter.format(new Date());
+		String studIdGenerated=formattedDate.substring(0, 4);
+	
+		if (studName!=null && studName.length() > 2)
 		{
 			studIdGenerated += studName.substring(0, 2);
 		}
